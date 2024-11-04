@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de perte de salaire pour les fonctionnaires</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1 class="title">Simulateur de perte de salaire pour les fonctionnaires</h1>
+	
+<p>Calculez votre perte de salaire en fonction de votre maladie. Il est sera plus juste d'indiquer directement votre salaire net, dans le cas contraire le salaire net sera obtenu en enlevant 19% à votre salaire brut.
+</p>
+
+
+    <div class="container">
+        <label for="salary-type">Type de salaire :</label>
+        <select id="salary-type">
+            <option value="brut">Salaire Brut</option>
+            <option value="net">Salaire Net</option>
+        </select>
+
+        <label for="salary-amount">Montant du salaire :</label>
+        <input type="number" id="salary-amount" required>
+
+        <label for="illness">Choisissez une maladie :</label>
+        <select id="illness" required>
+            <option value="3">Angine - 3 jours d'arrêt</option>	
+                    <option value="10">Appendicite - 10 jours d'arrêt</option>
+			<option value="5">COVID symptomatique - 5 jours d'arrêt</option>
+			<option value="3">Gale - 3 jours d'arrêt</option>
+			<option value="3">Gastro-entérite - 3 jours d'arrêt</option>
+			<option value="5">Grippe - 5 jours d'arrêt</option>
+			<option value="60">Hernie discale - 60 jours d'arrêt</option>
+                    <option value="45">Jambe dans le plâtre - 45 jours d'arrêt</option>
+			<option value="3">Otite - 3 jours d'arrêt</option>
+			<option value="7">Pneumopathie - 7 jours d'arrêt</option>
+			<option value="7">Pyélonéphrite - 7 jours d'arrêt</option>
+			<option value="3">Sinusite - 3 jours d'arrêt</option>
+                   
+            <!-- Ajoutez d'autres maladies ici -->
+        </select>
+
+        <button id="calculate-btn">Calculer</button>
+    </div>
+
+    <!-- Section pour entrer le nombre de jours de prolongation -->
+    <div class="container">
+        <label for="prolongation">Toujours malade, votre médecin prolonge votre arrêt maladie de :</label>
+        <select id="prolongation">
+            <option value="0">Aucune prolongation</option>
+            <option value="1">1 jour</option>
+            <option value="2">2 jours</option>
+            <option value="3">3 jours</option>
+            <option value="4">4 jours</option>
+            <option value="5">5 jours</option>
+            <option value="6">6 jours</option>
+            <option value="7">7 jours</option>
+            <option value="8">8 jours</option>
+            <option value="9">9 jours</option>
+            <option value="10">10 jours</option>
+            <option value="11">11 jours</option>
+            <option value="12">12 jours</option>
+            <option value="13">13 jours</option>
+            <option value="14">14 jours</option>
+            <option value="15">15 jours</option>
+        </select>
+        <button id="recalculate-btn">Recalculer avec prolongation</button>
+    </div>
+
+    <div id="results" style="display: none;">
+        <h2>Résultats :</h2>
+        <div class="result-columns">
+            <div class="column">
+                <h3>Projet jour de carence du gouvernement Barnier</h3>
+                <p>Perte Jours de carence: <span id="loss-carence"></span> €</p>
+                <p>Perte 90% du salaire: <span id="loss-90percent"></span> €</p>
+                <p>Perte de salaire pour la prolongation: <span id="prolongation-loss"></span> €</p>
+                <p><strong>Total Perte: <span id="total-loss"></span> €</strong></p>
+            </div>
+            <div class="column">
+                <h3>Jour de carence actuel</h3>
+                <p>Perte de salaire: <span id="current-loss"></span> €</p>
+            </div>
+        </div>
+    </div>
+<!-- Code HTML du compteur de visites -->
+<footer>
+    <p>Nombre de visites sur ce site :</p>
+    <!-- Voici un exemple de code généré par HitWebCounter -->
+    <a href="https://www.hitwebcounter.com" target="_blank">
+        <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0010&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="web counter" border="0">
+    </a>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
